@@ -1,0 +1,61 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+    - '**.xaml'
+    - '**.razor'
+  pull_request:
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+    - '**.xaml'
+    - '**.razor'
+
+env:
+  DOTNET_VERSION: '8.0.x' # The .NET SDK version to use
+
+jobs:
+  build:
+
+    name: Build All Projects
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+        - Finish
+        - Part 1 - Displaying Data
+        - Part 2 - Add Monkey Dialog
+        - Part 3 - Navigation
+        - Part 4 - Platform Features
+        - Part 5 - Theming the app
+        - Part 6 - Advanced Topics
+        
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+      with:
+        vs-prerelease: true
+    
+    - name: Install .NET workloads
+      shell: pwsh
+      run: |
+        dotnet workload install android
+        dotnet workload install ios
+        dotnet workload install maccatalyst
+        dotnet workload install maui
+      
+    - name: Build ${{ matrix.project }}
+      run: dotnet build "${{ matrix.project }}/MonkeyFinderHybrid/MonkeyFinderHybrid.csproj"

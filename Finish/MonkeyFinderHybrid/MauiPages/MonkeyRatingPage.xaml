@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:alohakit="clr-namespace:AlohaKit.Controls;assembly=AlohaKit"
+             x:Class="MonkeyFinderHybrid.MauiPages.MonkeyRatingPage"
+             Title="Rate a monkey"
+             BackgroundColor="{AppThemeBinding Dark=Black, Light=White}">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        Spacing="15" Padding="10">
+
+        <Label Text="How would you rate this monkey?"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               TextColor="{AppThemeBinding Dark=White, Light=Black}"/>
+
+        <alohakit:Rating x:Name="rating"/>
+    </VerticalStackLayout>
+</ContentPage>

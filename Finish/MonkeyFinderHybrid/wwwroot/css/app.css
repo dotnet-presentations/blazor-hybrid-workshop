@@ -1,0 +1,333 @@
+﻿html,
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a,
+.btn-link {
+    color: #006bb7;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #ffc107;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+h1:focus {
+    outline: none;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #e50000;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
+
+.status-bar-safe-area {
+    display: none;
+}
+
+input,
+textarea {
+    -webkit-user-select: text;
+    /* Chrome, Opera, Safari */
+    -moz-user-select: text;
+    /* Firefox 2+ */
+    -ms-user-select: text;
+    /* IE 10+ */
+    user-select: text;
+    /* Standard syntax */
+}
+
+@supports (-webkit-touch-callout: none) {
+    .status-bar-safe-area {
+        display: flex;
+        position: sticky;
+        top: 0;
+        height: env(safe-area-inset-top);
+        background-color: #f7f7f7;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .flex-column,
+    .navbar-brand {
+        padding-left: env(safe-area-inset-left);
+    }
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-right: 1px solid #e9ecef;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    color: #6c757d;
+}
+
+.button-yellow {
+    background-color: #ffffff;
+    /* White background */
+    color: #ffc107;
+    /* Yellow text */
+    border: 2px solid #ffc107;
+    /* Yellow border */
+    padding: 5px 5px;
+    /* Padding inside the button */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    text-align: center;
+    /* Center the text */
+    text-decoration: none;
+    /* Remove underline from links */
+    display: inline-block;
+    /* Make it an inline-block element */
+    border-radius: 25px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for background and text color */
+    margin-bottom: 10px;
+}
+
+.detailsbody {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.detailscard {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+.detailscard-header {
+    background-color: #fff;
+    padding: "0 0 25px 0";
+    /* Top = Right = Bottom = Left = 25px */
+    position: relative;
+}
+
+.detailsback-arrow {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.detailsback-button {
+    background-color: transparent;
+    /* Transparent background */
+    color: #2a2b2c;
+    /* White text color */
+    border: none;
+    /* No border */
+    font-size: 24px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    display: flex;
+    /* Flexbox for alignment */
+    align-items: center;
+    /* Center items vertically */
+    padding: 0px 0px;
+    /* Padding inside the button */
+    text-decoration: none;
+    /* No underline */
+    transition: color 0.3s;
+    /* Smooth transition for color */
+}
+
+.detailstitle {
+    color: #2a2b2c;
+    font-size: 1.5em;
+}
+
+.detailscard-image {
+    position: relative;
+    margin: 20px 0;
+    background-color: #ffc107;
+    padding: 10px 20px;
+    display: grid;
+    justify-items: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    text-align: center;
+    /* Center text inside the h2 */
+}
+
+.detailscard-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    align-items: center;
+    /* Center items vertically */
+}
+
+.detailsimage-title {
+    position: absolute;
+    width: 100%;
+    bottom: -45px;
+    left: 0;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ffc107;
+    padding: 10px;
+}
+
+.detailscard-body {
+    padding: 20px;
+    display: grid;
+}
+
+.detailsbutton-yellow {
+    background-color: #ffffff;
+    /* White background */
+    color: #ffc107;
+    /* Yellow text */
+    border: 2px solid #ffc107;
+    /* Yellow border */
+    padding: 5px 5px;
+    /* Padding inside the button */
+    font-size: 16px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold text */
+    text-align: center;
+    /* Center the text */
+    text-decoration: none;
+    /* Remove underline from links */
+    display: inline-block;
+    /* Make it an inline-block element */
+    border-radius: 25px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for background and text color */
+    margin: 15px;
+    align-items: center;
+    /* Center items vertically */
+}
+
+.detailsdescription {
+    color: #6c757d;
+    margin: 10px 0;
+}
+
+.detailslocation,
+.detailspopulation,
+.detailsrating {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.optionstitle {
+    color: #2a2b2c;
+    font-size: 1.5em;
+}
+
+.optionstheme {
+    color: #2a2b2c;
+    font-size: 16px;
+}
+
+.navbar-light .navbar-brand  {
+    color: white;
+}

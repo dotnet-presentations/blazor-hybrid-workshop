@@ -1,0 +1,113 @@
+﻿@page "/"
+@inject NavigationManager NavManager
+@inject IDialogService DialogService
+@inject MonkeyService monkeyService
+@inject IGeolocation geolocation
+@inject IJSRuntime JS
+
+<div>
+    <MyButton Caption="Add New Monkey" Callback="AddMonkey" />
+    <button class="button-yellow" @onclick="FindMonkey">Find Closest Monkey</button>
+
+    @if (monkeys is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <ul class="card-list">
+            @foreach (var monkey in monkeys)
+            {
+                <li @onclick="()=>GoToDetails(monkey)" class="card-item">
+                    <img class="card-image" src="@monkey.Image">
+                    <div class="card-content">
+                        <h2>@monkey.Name</h2>
+                        <p>@monkey.Location</p>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+@code {
+    private List<Monkey> monkeys = new();
+
+    private Monkey DialogData { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load monkeys from MonkeyService
+        monkeys = await monkeyService.GetMonkeys();
+    }
+
+    private async Task FindMonkey()
+    {
+        try
+        {
+            // Get cached location, else get real location.
+            var location = await geolocation.GetLastKnownLocationAsync();
+            if (location is null)
+            {
+                location = await geolocation.GetLocationAsync(new GeolocationRequest
+                    {
+                        DesiredAccuracy = GeolocationAccuracy.Medium,
+                        Timeout = TimeSpan.FromSeconds(30)
+                    });
+            }
+
+            // Find closest monkey to us
+            var closestMonkey = monkeys.OrderBy(m => location.CalculateDistance(
+                new Location(m.Latitude, m.Longitude), DistanceUnits.Miles))
+                .FirstOrDefault();
+
+            var closestMonkeyMessage = string.Empty;
+
+            if (closestMonkey is not null)
+            {
+                closestMonkeyMessage = $"{closestMonkey.Name} is closest, this monkey is in {closestMonkey.Location}";
+            }
+            else
+            {
+                closestMonkeyMessage = "The closest monkey could not be determined!";
+            }
+
+            await ((Application)app).Windows[0].Page!.DisplayAlert("Closest Monkey",
+                closestMonkeyMessage, "OK");
+
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Unable to query location: {ex.Message}");
+            await ((Application)app).Windows[0].Page!.DisplayAlert("Error!", ex.Message, "OK");
+        }
+    }
+
+    private void GoToDetails(Monkey monkey)
+    {
+        NavManager.NavigateTo($"details/{monkey.Name}");
+    }
+
+    private async Task AddMonkey()
+    {
+        // MAUI Debug console
+        Debug.WriteLine("Add Monkey");
+
+        // Create a new instance of DialogData to allow the user to cancel the update
+        var data = new Monkey();
+        var dialog = await DialogService.ShowDialogAsync<SimpleCustomizedDialog>(data, new DialogParameters()
+            {
+                Title = $"Add a New Monkey",
+                PreventDismissOnOverlayClick = true,
+                PreventScroll = true,
+            });
+
+        var result = await dialog.Result;
+        if (!result.Cancelled && result.Data is not null)
+        {
+            DialogData = (Monkey)result.Data;
+            monkeyService.AddMonkey(DialogData);
+            monkeys = await monkeyService.GetMonkeys();
+        }
+    }
+}
