@@ -46,3 +46,7 @@ In this workshop you will build the same app as in this one, the Monkey Finder a
 - [.NET Beginner Series Videos](https://dot.net/videos)
 
 If you have any questions please reach out to us on X (previously Twitter): [@SweekritiS](https://twitter.com/SweekritiS), [@jfversluis](https://x.com/jfversluis) and/or [@maddymontaquila](https://x.com/maddymontaquila).
+
+## Acknowledgements
+
+Special shoutout to [Jimmy Engström](https://github.com/EngstromJimmy) & [James Montemagno](https://github.com/jamesmontemagno) for providing early feedback!
