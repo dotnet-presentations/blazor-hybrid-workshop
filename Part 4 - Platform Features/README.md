@@ -98,7 +98,7 @@ Here we will be showing it with geolocation, but all the similar device and sens
     @inject IGeolocation geolocation
     ```
 
-1. Under the bottom to add a new monkey, let's add a button to find the closest monkey and wire up a click event for `FindMonkey`:
+1. Under the button to add a new monkey, let's add a button to find the closest monkey and wire up a click event for `FindMonkey`:
 
     ```html
     <!-- This one is already here -->
