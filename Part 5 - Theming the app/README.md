@@ -362,7 +362,7 @@ The API for setting the status bar color is one of those functionalities that ca
             // This whole block was added
             if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
             {
-                StatusBar.SetColor(Microsoft.Maui.Graphics.Colors.FromArgb("#444034"));
+                StatusBar.SetColor(Microsoft.Maui.Graphics.Color.FromArgb("#444034"));
                 StatusBar.SetStyle(StatusBarStyle.LightContent);
             }
         }
@@ -375,7 +375,7 @@ The API for setting the status bar color is one of those functionalities that ca
             // This whole block was added
             if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
             {
-                StatusBar.SetColor(Microsoft.Maui.Graphics.Colors.FromArgb("#DDAF24"));
+                StatusBar.SetColor(Microsoft.Maui.Graphics.Color.FromArgb("#DDAF24"));
                 StatusBar.SetStyle(StatusBarStyle.DarkContent);
             }
         }
@@ -392,7 +392,7 @@ The API for setting the status bar color is one of those functionalities that ca
                 // This whole block was added
                 if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
                 {
-                    StatusBar.SetColor(Microsoft.Maui.Graphics.Colors.FromArgb("#444034"));
+                    StatusBar.SetColor(Microsoft.Maui.Graphics.Color.FromArgb("#444034"));
                     StatusBar.SetStyle(StatusBarStyle.LightContent);
                 }
             }
@@ -403,7 +403,7 @@ The API for setting the status bar color is one of those functionalities that ca
                 // This whole block was added
                 if (DeviceInfo.Platform == DevicePlatform.Android || DeviceInfo.Platform == DevicePlatform.iOS)
                 {
-                    StatusBar.SetColor(Microsoft.Maui.Graphics.Colors.FromArgb("#DDAF24"));
+                    StatusBar.SetColor(Microsoft.Maui.Graphics.Color.FromArgb("#DDAF24"));
                     StatusBar.SetStyle(StatusBarStyle.DarkContent);
                 }
             }
