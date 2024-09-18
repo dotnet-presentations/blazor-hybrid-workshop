@@ -130,7 +130,7 @@ For this example we will share the rating values for our monkeys. If you recall,
       // ((Application)app).Windows[0].Page!.Navigation.PushAsync(new MonkeyRatingPage());
 
       // Now update it to, notice the ratingState variable
-      ((Application)app).Windows[0].Page!.Navigation.PushModalAsync(new MonkeyRatingPage(monkey, ratingState));
+      ((Application)app).Windows[0].Page!.Navigation.PushAsync(new MonkeyRatingPage(monkey, ratingState));
    }
    ```
 
