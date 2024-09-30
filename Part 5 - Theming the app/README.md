@@ -291,7 +291,7 @@ The API for setting the status bar color is one of those functionalities that ca
     When using Visual Studio Code, either use the built-in NuGet commands that are in C# Dev Kit or simply add this line to a `ItemGroup` node in your csproj file:
 
     ```xml
-    <PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
     ```
 
 1. To initialize the Toolkit properly, we need to register it in the **MauiProgram.cs** file, update the builder code like so:
