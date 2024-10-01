@@ -196,7 +196,7 @@ Let's dive in.
 
    You're already a experienced Blazor engineer by now, can you see what we're doing here?
 
-   The `<button>` might look familiar as it is the button that we have been using through the entire application. But we don't want to repeat ourselves and duplicate having that `class` attribute everywhere. If we need to updat this value later, we need to go through the whole app. It's better to just update this in 1 place. And that is exactly why we are wrapping this in a Razor component.
+   The `<button>` might look familiar as it is the button that we have been using through the entire application. But we don't want to repeat ourselves and duplicate having that `class` attribute everywhere. If we need to update this value later, we need to go through the whole app. It's better to just update this in this one place. And that is exactly why we are wrapping this in a Razor component.
 
    To make it reusable for all of our buttons in the application, we need to make the text on the button and the method our button should call configurable.
 
