@@ -51,6 +51,10 @@ Of course its not strictly necessary to use this, you can also use a regular pag
 
 You can install the Fluent UI Blazor Components library to your project by simply adding the `Microsoft.FluentUI.AspNetCore.Components` NuGet package to your project. For this workshop this NuGet package has already been added to the project.
 
+> [!NOTE]
+> Sometimes when installing NuGet packages the resulting path can be very long. In some cases paths will become so long that it goes over the path length limitations of Windows and/or Visual Studio. While working on this workshop we noticed that people might run into this issue when installing the Fluent UI Blazor Components NuGet package. 
+> If you run into a build error right after installing the package, try moving your project folder closer to the filesystem root. The total length of the path (which is probably in the error message) should not exceed 260 characters.
+
 Additionally, we have added the required `@using Microsoft.FluentUI.AspNetCore.Components` statement to the **_Imports.razor** file for this project. If you have been following along with your own project, make sure to add that as well, or add this `@using` directive in all pages where you use the Fluent UI Blazor Components.
 
 Let's continue by configuring the project to use these Fluent UI components. 
