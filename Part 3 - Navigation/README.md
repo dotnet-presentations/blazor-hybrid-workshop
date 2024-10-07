@@ -303,7 +303,7 @@ In the **MauiPages** folder, you will find a **MonkeyRatingPage.xaml** and **Mon
 
 Let's add a rating component to this page so we can rate each monkey!
 
-1. If you're using the start-point project for this step the NuGet library is already installed, butif you're following along with your own project, make sure to install the [AlohaKit](https://github.com/jsuarezruiz/AlohaKit.Controls) library.
+1. If you're using the start-point project for this step the NuGet library is already installed, but if you're following along with your own project, make sure to install the [AlohaKit](https://github.com/jsuarezruiz/AlohaKit.Controls) library.
 
 1. To use the `Rating` control from the AlohaKit library, we first need to add the right XML namespace in the `ContentPage` node. Make sure to add the `xmlns:alohakit` attribute as shown below.
 
