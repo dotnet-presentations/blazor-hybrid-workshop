@@ -4,7 +4,7 @@ Today we will build a [Blazor Hybrid](https://learn.microsoft.com/aspnet/core/bl
 
 ## Setup Guide
 
-Hey there! This workshop will be a hands on and a bring your own device workshop. You can develop on PC or Mac and all you will need to do is install [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/Download) with the .NET MAUI workload and/or .NET MAUI extension. The workshop sample application is built on .NET 8, which means you will need at least version 17.8 of Visual Studio 2022 or newer. If you're using Visual Studio Code, or another code editor, make sure to have the [latest .NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) installed, also with the .NET MAUI workload.
+Hey there! This workshop will be a hands on and a bring your own device workshop. You can develop on PC or Mac and all you will need to do is install [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio Code](https://code.visualstudio.com/Download) with the .NET MAUI workload and/or .NET MAUI extension. The workshop sample application is built on .NET 9, which means you will need at least version 17.12 of Visual Studio 2022 or newer. If you're using Visual Studio Code, or another code editor, make sure to have the [latest .NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) installed, also with the .NET MAUI workload.
 
 Before starting the workshop, I recommend going through the quick 10 minute [.NET MAUI Blazor Hybrid Tutorial](https://learn.microsoft.com/aspnet/core/blazor/hybrid/tutorials/maui) that will guide you through installation and also ensuring everything is configured correct.
 

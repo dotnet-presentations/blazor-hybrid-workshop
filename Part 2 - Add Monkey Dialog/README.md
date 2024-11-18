@@ -69,19 +69,6 @@ Find the **wwwroot** folder, with the **index.html** file inside:
     </picture>
 </p>
 
-1. Open the **index.html** file and find the below line
-
-    ```html
-    <script src="_framework/blazor.webview.js" autostart="false"></script>
-    ```
-
-    Right above this line, add the initialization line for the Fluent UI Blazor library as seen below. You want to make sure that the value of the `app-name` attribute matches the assembly name of your application. Typically this is the same as the name of your C# project, in our case MonkeyFinderHybrid.
-
-    ```html
-    <script app-name="MonkeyFinderHybrid" src="./_content/Microsoft.FluentUI.AspNetCore.Components/js/initializersLoader.webview.js"></script>
-    <script src="_framework/blazor.webview.js" autostart="false"></script>
-    ```
-
 1. In **MauiProgram.cs**, we're going to add a call to the `AddFluentUIComponents()` method which will initialize the components in this library. To do this, add the following line:
 
     ```csharp
